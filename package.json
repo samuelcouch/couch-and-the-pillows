@@ -6,7 +6,7 @@
   "main": "server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --quiet --hot --host 127.0.0.1 --port 3000 --content-base client/build/"
+    "start": "(./node_modules/webpack-dev-server/bin/webpack-dev-server.js --quiet --hot --host 127.0.0.1 --port 2999 --content-base client/build/) & (./node_modules/nodemon/bin/nodemon.js ./server/index.js)"
   },
   "author": "Couch & The Pillows",
   "license": "MIT",

@@ -1,7 +1,7 @@
 var path        = require('path');
 var webpack     = require('webpack');
 
-var PORT        = 3000;
+var PORT        = 2999;
 var SRC_PATH    = path.join(__dirname, 'client', 'src');
 var BUILD_PATH  = path.join(__dirname, 'client', 'dist');
 
@@ -20,7 +20,7 @@ module.exports = {
   },
 
   output:   {
-    publicPath: '/static/',
+    publicPath: 'http://127.0.0.1:2999/static/',
     path:       BUILD_PATH,
     filename:   'app.js'
   },
