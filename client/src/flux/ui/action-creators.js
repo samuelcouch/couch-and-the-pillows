@@ -1,5 +1,9 @@
-import { TOGGLE_SIDEBAR } from './actions';
+import { SHOW_SIDEBAR, HIDE_SIDEBAR } from './actions';
 
-export function toggleSidebar() {
-  return { type: TOGGLE_SIDEBAR };
+export function showSidebar() {
+  return { type: SHOW_SIDEBAR };
+};
+
+export function hideSidebar() {
+  return { type: HIDE_SIDEBAR };
 };
