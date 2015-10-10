@@ -2,16 +2,30 @@ import React from 'react';
 import LeftNav from 'material-ui/lib/left-nav';
 import MenuItem from 'material-ui/lib/menu/menu-item';
 
+import { dispatch } from 'flux/store';
+import { hideSidebar } from 'flux/ui/action-creators';
+
 // Load component styles
 require('./sidebar.scss');
 
 export default class Sidebar extends React.Component {
+  static propTypes = {
+    visible: React.PropTypes.bool.isRequired
+  }
+
   static menuItems = [
     { route: '/', text: 'Home' }
   ]
 
   state = {
     navOpen: false
+  }
+
+  componentWillReceiveProps = (nextProps) => {
+    if (nextProps.visible !== this.props.visible) {
+      if (nextProps.visible) this.openLeftNav();
+      else this.closeLeftNav();
+    }
   }
 
   openLeftNav = () => {
@@ -30,6 +44,7 @@ export default class Sidebar extends React.Component {
 
   handleLeftNavClosed = () => {
     this.state.navOpen = false;
+    dispatch(hideSidebar());
   }
 
   render() {
